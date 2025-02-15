@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Decepticon </title>
+  <link rel="stylesheet" href="C:\Users\Zheka\Desktop\билли\static\style.css">
+  <style>
+    /* Общие стили страницы */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    
+    /* Блок выбора камер */
+    #selection {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    /* Стили кнопок */
+    button {
+      background-color: #ff0000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #fff;
+    }
+    button:hover {
+      background-color: #ff0000;
+    }
+    
+    /* Контейнер для видеопотоков */
+    #streams {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    /* Блок каждой камеры */
+    .cam {
+      background-color: #202020;
+      border-radius: 10px;
+      padding: 10px;
+      width: 400px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    .cam h2 {
+      margin: 0 0 10px 0;
+    }
+    
+    /* Контейнер для видео и иконок */
+    .cam-content {
+      position: relative;
+    }
+    
+    /* Стилизация видеопотока */
+    .cam img.video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 5px;
+      border: 3px solid #ff4444;
+    }
+    
+    /* Контейнер для иконок */
+    .icon-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .icon-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+    .icon-btn img {
+      width: 24px;
+      height: 24px;
+    }
+    
+    /* Стилизация блока аннотации – позиционируется поверх видео */
+    .annotation {
+  position: fle;
+  top: 50px;
+   /* прикрепляем к левому краю окна */
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+  display: none;
+  z-index: 15;
+}
+
+    
+  </style>
+</head>
+<body>
+  <h1>Видеонаблюдение с AI</h1>
+  <div id="selection">
+    <h2>Выберите камеры</h2>
+    <form id="camForm">
+      {% for cam in cameras %}
+        <label>
+          <input type="checkbox" name="cam" value="{{ cam }}"> Камера {{ cam }}
+        </label><br>
+      {% endfor %}
+      <button type="button" onclick="startStreaming()">Start</button>
+    </form>
+  </div>
+  <div id="streams"></div>
+
+  <script>
+    // Запуск потоков выбранных камер
+    function startStreaming() {
+      const streamsDiv = document.getElementById('streams');
+      streamsDiv.innerHTML = "";  // очищаем блок со стримами
+      const checkboxes = document.getElementsByName('cam');
+
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          const camId = checkboxes[i].value;
+          // Создаем контейнер для каждого потока с data-атрибутом для camId
+          const streamDiv = document.createElement('div');
+          streamDiv.className = 'cam';
+          streamDiv.setAttribute('data-camid', camId);
+
+          // Внутри контейнера создаём контент и блок с иконками
+          streamDiv.innerHTML = `
+            <h2>Камера ${camId}</h2>
+            <div class="cam-content">
+              <img class="video" src="/video_feed/${camId}" alt="Камера ${camId}">
+              <div class="icon-container">
+                <button class="icon-btn" onclick="toggleAnnotation('${camId}')">
+                  <img src="C:/Users/Zheka/Desktop/билли/static/1.png" alt="Аннотация">
+                </button>
+                <button class="icon-btn" onclick="openImShowWindow('${camId}')">
+                  <img src="C:/Users/Zheka/Desktop/билли/static/2.png" alt="Полноэкранный режим">
+                </button>
+              </div>
+              <div id="annotation-${camId}" class="annotation">
+                <p>Нет данных</p>
+              </div>
+            </div>
+          `;
+          streamsDiv.appendChild(streamDiv);
+        }
+      }
+    }
+
+    // Функция открытия нового окна с полноэкранным режимом
+    function openImShowWindow(camId) {
+      const url = `/video_feed/${camId}`;
+      let imShowWindow = window.open("", "_blank", "width=1280,height=720,toolbar=no,location=no,menubar=no");
+      if (imShowWindow) {
+        imShowWindow.document.write(`
+          <!DOCTYPE html>
+          <html lang="ru">
+          <head>
+            <meta charset="UTF-8">
+            <title>Полноэкранный режим - Камера ${camId}</title>
+            <style>
+              body {
+                margin: 0;
+                background-color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+              img {
+                width: auto;
+                height: auto;
+                object-fit: contain;
+              }
+            </style>
+          </head>
+          <body>
+            <img src="${url}" alt="Камера ${camId}">
+          </body>
+          </html>
+        `);
+        imShowWindow.document.close();
+        if (imShowWindow.document.documentElement.requestFullscreen) {
+          imShowWindow.document.documentElement.requestFullscreen();
+        }
+      }
+    }
+
+    // Функция переключения отображения блока аннотации
+    function toggleAnnotation(camId) {
+      const annotationDiv = document.getElementById(`annotation-${camId}`);
+      if (annotationDiv) {
+        annotationDiv.style.display = (annotationDiv.style.display === 'none' || annotationDiv.style.display === '') ? 'block' : 'none';
+      }
+    }
+
+    // Функция обновления изображения и аннотации детекции (вызывается через eel)
+    eel.expose(update_frame);
+    function update_frame(camId, frame, detectedData) {
+      // Обновляем изображение видео
+      const camDiv = document.querySelector(`.cam[data-camid="${camId}"]`);
+      if (camDiv) {
+        const imgElement = camDiv.querySelector('img.video');
+        if (imgElement) {
+          imgElement.src = frame;
+        }
+      } else {
+        console.error(`Камера ${camId} не найдена.`);
+      }
+
+      // Обновляем содержимое блока аннотации
+      const annotationDiv = document.getElementById(`annotation-${camId}`);
+      if (annotationDiv) {
+        if (detectedData && detectedData.length > 0) {
+          let people = detectedData.filter(obj => obj.label.toLowerCase() === 'person');
+          if (people.length > 0) {
+            let html = `<p>Обнаружено ${people.length} человек(а):</p>`;
+            people.forEach((person, idx) => {
+              let clothesInfo = person.clothes ? person.clothes : 'Информация о одежде недоступна';
+              html += `<p>Человек ${idx + 1}: ${clothesInfo}</p>`;
+            });
+            annotationDiv.innerHTML = html;
+          } else {
+            annotationDiv.innerHTML = `<p>Люди не обнаружены</p>`;
+          }
+        } else {
+          annotationDiv.innerHTML = `<p>Нет данных</p>`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
