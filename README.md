@@ -1,6 +1,5 @@
 <br>
-<h2 id="sway">SWAY</h2>
-
+<h1 align="center" id="sway">SWAY</h1>
 
 </h1>
 <h4  align="center">AI – система видеоконтроля использования средств индивидуальной защиты 
@@ -392,9 +391,8 @@ YOLOv8m - это модель компьютерного зрения от ко�
 <br>
 
 <p align="center">
-  <a href="#sway" style="font-size:40px; text-decoration:none;">НАВЕРХ</a>
+  <a href="https://github.com/ObamaObama444/Sway#sway" style="font-size:40px; text-decoration:none;">НАВЕРХ</a>
 </p>
-
 
 
 
