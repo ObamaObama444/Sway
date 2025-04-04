@@ -32,17 +32,17 @@
 
 - 1.png
 -  2.png
-- style.css
+- style.css - стиль для Web-приложения
 
 </details>
 
-Сайт:
+Web-приложение:
 
 <details>
   
 <summary>templates</summary>
 
-- index.html
+- index.html - само Web-приложение
 
 </details>
 
@@ -50,9 +50,9 @@
 
 </details>
 
-**main.py** -  основной код для запуска сайта
+**main.py** -  основной код для запуска Web-приложения
 
-
+**yolov8m.pt** -  используемая модель компьютерного зрений
 ## Аннотация
 
 
