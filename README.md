@@ -1,9 +1,4 @@
-|  :---:  |  :---:  |  :---:  |  :---:  |
-| ![Image](https://github.com/user-attachments/assets/482d73a1-171b-4426-a2fb-f17085ac9cc8) | ![Image](https://github.com/user-attachments/assets/12fe9c02-e56e-40cc-96df-d6198986b969) | ![Image](https://github.com/user-attachments/assets/d7a0e8ac-336a-4991-9439-3af660b5e51a) | ![Image](https://github.com/user-attachments/assets/173bbd08-a24f-40a3-8249-378d2a341244) |
-| ![Image](https://github.com/user-attachments/assets/6d27ce2e-6d1e-455f-98fd-cf9bf408c5db) | ![Image](https://github.com/user-attachments/assets/1918f2ef-d45f-4643-b76a-423ffd5beb0c) | ![Image](https://github.com/user-attachments/assets/ee987d41-05c8-4df0-b7fe-ca68257b5502) | ![Image](https://github.com/user-attachments/assets/decfaded-978d-4032-8d33-b4d52b8ae445) |
-| ![Image](https://github.com/user-attachments/assets/1f8e4a9c-eca1-40ef-a801-3932c6a0a95d) | ![Image](https://github.com/user-attachments/assets/9fdd5cd4-a7a9-40e7-8507-0200e0b4e5f7) | ![Image](https://github.com/user-attachments/assets/c325ae97-e1c8-471a-b715-f3261410c011) | ![Image](https://github.com/user-attachments/assets/dffd9734-4c89-4ef0-9f56-7e6178df3396) |
-| ![Image](https://github.com/user-attachments/assets/e92bdc37-253f-4055-8765-1bc3e1e164c4) | ![Image](https://github.com/user-attachments/assets/a4a2c820-9135-4e72-ab0c-b386b342af9b) | ![Image](https://github.com/user-attachments/assets/c5cd9fc1-4d15-4448-b452-e4fd8300b17a) | ![Image](https://github.com/user-attachments/assets/04ee87f5-7306-477f-b7bc-cb4125647e9d) |
-
+# ОЧЕНЬ ВАЖНОЕ ОБЪЯВЛЕНИЕ!!!           УВАЖАЕМЫЕ ЭКСПЕРТЫ, ВИД И ФУНКЦИОНАЛ МОЕЙ СИСТЕМЫ ОБНОВИЛИСЬ!! ПРОСЬБА ПОСМОТРЕТЬ ОБНОВЛЕННЫЙ ИНТЕРФЕЙС В РАЗДЕЛЕ<BR> "[Описание итогового решения](#описание-итогового-решения)"
 <br>
 <h1 align="center" id="sway">SWAY</h1>
 
@@ -261,26 +256,12 @@ YOLOv8m - это модель компьютерного зрения от ко�
 <img src="https://github.com/user-attachments/assets/4cf57546-ea5d-42ba-8d61-30a4081b93b2" width="900" height="500"/>
 
  ### Интерфейс web-приложения (путь пользователя):
-
-1. **Начальный экран:**  
-<img src="https://github.com/user-attachments/assets/502a8f60-0ff5-4a46-aae9-6804975070f2" width="700" height="600"/>
-<br>
-
-2. **Выбор доступных камер:**  
-<img src="https://github.com/user-attachments/assets/22b2a880-5b6c-4353-bebd-25661c028fbd" width="700" height="600"/>
-
-<br>
-
-3. **Детекция видеопотока:**  
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/055bc43d-3ba5-4eee-80b2-5c200125def7" width="45%" />
-  <img src="https://github.com/user-attachments/assets/cf651e58-bc28-4ea2-b82e-2a57cda311b0" width="45%" />
-</p>
-
-<br>
-
-4. **Полноэкранный режим:**  
- <img src="https://github.com/user-attachments/assets/7fcccb3c-db8d-4b04-8b57-f209f8ad7a3c" width="900" height="600"/>
+ Интерфейс моего web-сервиса 
+| ![Image](https://github.com/user-attachments/assets/482d73a1-171b-4426-a2fb-f17085ac9cc8) | ![Image](https://github.com/user-attachments/assets/12fe9c02-e56e-40cc-96df-d6198986b969) | ![Image](https://github.com/user-attachments/assets/d7a0e8ac-336a-4991-9439-3af660b5e51a) | ![Image](https://github.com/user-attachments/assets/173bbd08-a24f-40a3-8249-378d2a341244) |
+| --- | --- | --- | --- |
+| ![Image](https://github.com/user-attachments/assets/6d27ce2e-6d1e-455f-98fd-cf9bf408c5db) | ![Image](https://github.com/user-attachments/assets/1918f2ef-d45f-4643-b76a-423ffd5beb0c) | ![Image](https://github.com/user-attachments/assets/ee987d41-05c8-4df0-b7fe-ca68257b5502) | ![Image](https://github.com/user-attachments/assets/decfaded-978d-4032-8d33-b4d52b8ae445) |
+| ![Image](https://github.com/user-attachments/assets/1f8e4a9c-eca1-40ef-a801-3932c6a0a95d) | ![Image](https://github.com/user-attachments/assets/9fdd5cd4-a7a9-40e7-8507-0200e0b4e5f7) | ![Image](https://github.com/user-attachments/assets/c325ae97-e1c8-471a-b715-f3261410c011) | ![Image](https://github.com/user-attachments/assets/dffd9734-4c89-4ef0-9f56-7e6178df3396) |
+| ![Image](https://github.com/user-attachments/assets/e92bdc37-253f-4055-8765-1bc3e1e164c4) | ![Image](https://github.com/user-attachments/assets/a4a2c820-9135-4e72-ab0c-b386b342af9b) | ![Image](https://github.com/user-attachments/assets/c5cd9fc1-4d15-4448-b452-e4fd8300b17a) | ![Image](
 
 <br>
 
