@@ -31,8 +31,7 @@
 
   <summary>static</summary>
 
-- 1.png
--  2.png
+
 - style.css - стиль для Web-приложения
 
 </details>
